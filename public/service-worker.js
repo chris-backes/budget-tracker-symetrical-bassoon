@@ -16,6 +16,7 @@ const FILES_TO_CACHE = [
 ];
 const CACHE_NAME = "my-site-cache-v1";
 const DATA_CACHE_NAME = "data-cache-v1";
+
 self.addEventListener("install", function (evt) {
 	evt.waitUntil(
 		caches.open(CACHE_NAME).then((cache) => {
@@ -25,6 +26,7 @@ self.addEventListener("install", function (evt) {
 	);
 	self.skipWaiting();
 });
+
 self.addEventListener("activate", function (evt) {
 	evt.waitUntil(
 		caches.keys().then((keyList) => {
